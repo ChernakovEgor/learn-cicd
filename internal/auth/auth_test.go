@@ -3,7 +3,7 @@ package auth
 import (
 	"fmt"
 	"net/http"
-	a "testing"
+	"testing"
 )
 
 func TestGetAPIKey(t *testing.T) {
