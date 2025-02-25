@@ -19,12 +19,7 @@ jobs:
     - name: Build
       run: ./scripts/buildprod.sh
 
-  deploy_to_gcp:
-    name: Deploy To GCP
-    runs-on: ubuntu-latest
-
-    steps:
-    - id: 'auth'
+    - name: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
         credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
@@ -33,4 +28,5 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v2'
 
     - name: 'Use gcloud CLI'
-      run: 'gcloud info'
+      run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/notely-452017/notely-ar-repo/notely:latest .'
+
