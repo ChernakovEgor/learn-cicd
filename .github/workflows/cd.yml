@@ -20,6 +20,9 @@ jobs:
       run: ./scripts/buildprod.sh
 
   deploy_to_gcp:
+    name: Deploy To GCP
+    runs-on: ubuntu-latest
+
     steps:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
