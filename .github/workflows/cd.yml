@@ -31,4 +31,3 @@ jobs:
 
     - name: 'Use gcloud CLI'
       run: 'gcloud info'
-
